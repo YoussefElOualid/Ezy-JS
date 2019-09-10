@@ -1,0 +1,13 @@
+export declare const declaration: {};
+export declare const webSocketMapping: {};
+export declare const subscribeMapping: any[];
+export declare const routerMapping: any[];
+export declare let Moduleimports: any[];
+export declare let Queriesql: {};
+export declare let db: any;
+export declare let $query: any;
+export declare function setConnectionDataBase(connection: any): void;
+export declare function setControllerName(className: any, obj: any, c?: any): void;
+export declare function setRoutingName(router: any, obj: any, c?: any): void;
+export declare function setWebSocketName(router: any, obj: any, c?: any): void;
+export declare function setSubscribeName(router: any, obj: any, c?: any): void;

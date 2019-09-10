@@ -1,0 +1,55 @@
+{
+  "name": "helpin-backend",
+  "version": "1.0.0",
+  "description": "Doz Js FrameWork Nodejs",
+  "main": "main.ts",
+  "scripts": {
+    "start": "ts-node -r tsconfig-paths/register src/main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate-docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose",
+    "docker-build-push": "rm -rf node_modules && npm i --env $CI_ENVIRONMENT_SLUG --force && docker/docker-build.sh && docker/docker-push.sh $CI_ENVIRONMENT_SLUG",
+    "start:docker": "PORT=80 npm start"
+  },
+  "docker": {
+    "registry": {
+      "preprod": "172.19.47.33:5000",
+      "prod": "172.19.46.169:5000"
+    }
+  },
+  "publishConfig": {
+    "registry": "http://artifactory.intelcia.com:8082/repository/npm-local/"
+  },
+  "keywords": [
+    "DozJs"
+  ],
+  "author": "Youssef Eloualid <youssef.eloualid.dev@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^12.7.1",
+    "core-js": "^2.6.9",
+    "cors": "^2.8.5",
+    "jsdoc": "^3.6.3",
+    "minami": "^1.2.3",
+    "nodemon": "^1.19.1",
+    "request": "^2.88.0",
+    "socket.io": "^2.2.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chalk": "^2.4.2",
+    "colors": "^1.3.3",
+    "express": "^4.17.1",
+    "http": "0.0.0",
+    "http-express": "0.0.7",
+    "log4js": "^4.5.1",
+    "logger": "0.0.1",
+    "mysql": "^2.17.1",
+    "reflect-metadata": "^0.1.13",
+    "swagger-ui-express": "^4.0.7",
+    "ts-node": "^8.3.0",
+    "tsconfig-paths": "^3.8.0",
+    "typeorm": "^0.2.18",
+    "typescript": "^3.5.3",
+    "util": "^0.12.1"
+  }
+}
